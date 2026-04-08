@@ -1,0 +1,120 @@
+/* ── HOME PAGE CSS ── */
+
+#home {
+  background: linear-gradient(135deg, var(--navy) 0%, #0d2d5e 60%, #0a3a6e 100%);
+  position: relative; overflow: hidden;
+  display: flex; align-items: center;
+}
+
+.home-bg-shapes { position: absolute; inset: 0; pointer-events: none; }
+.shape { position: absolute; border-radius: 50%; opacity: 0.06; }
+.shape-1 { width: 500px; height: 500px; background: var(--cyan);  top: -100px; right: -100px; }
+.shape-2 { width: 300px; height: 300px; background: var(--teal);  bottom: -80px; left: -80px; }
+.shape-3 { width: 200px; height: 200px; background: var(--pink);  top: 40%; left: 30%; }
+
+.home-content {
+  position: relative; z-index: 2;
+  max-width: 1200px; margin: 0 auto; padding: 100px 40px 80px;
+  display: flex; align-items: center; gap: 60px; flex-wrap: wrap;
+}
+
+.home-text { flex: 1; min-width: 280px; }
+
+.home-badge {
+  display: inline-block;
+  background: rgba(0,212,232,0.15); border: 1px solid rgba(0,212,232,0.4);
+  color: var(--cyan); font-size: 12px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  padding: 6px 16px; border-radius: 20px; margin-bottom: 20px;
+}
+
+.home-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: clamp(32px, 5vw, 64px); font-weight: 700;
+  color: #fff; line-height: 1.1; margin-bottom: 20px;
+}
+.home-title span { color: var(--cyan); }
+
+.home-sub {
+  font-size: clamp(14px, 2vw, 16px); color: rgba(255,255,255,0.72);
+  line-height: 1.7; margin-bottom: 36px; max-width: 480px;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: linear-gradient(90deg, var(--teal), var(--cyan));
+  color: var(--navy); font-weight: 700;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 16px; letter-spacing: 1px; text-transform: uppercase;
+  padding: 14px 36px; border-radius: 8px; text-decoration: none;
+  transition: all 0.25s; box-shadow: 0 4px 20px rgba(0,174,204,0.4);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,174,204,0.6); }
+
+.btn-secondary {
+  display: inline-block; margin-left: 16px;
+  border: 2px solid var(--cyan); color: var(--cyan);
+  font-weight: 700; font-family: 'Rajdhani', sans-serif;
+  font-size: 16px; letter-spacing: 1px; text-transform: uppercase;
+  padding: 12px 32px; border-radius: 8px; text-decoration: none;
+  transition: all 0.25s;
+}
+.btn-secondary:hover { background: rgba(0,212,232,0.12); }
+
+.home-stats { display: flex; gap: 36px; margin-top: 48px; flex-wrap: wrap; }
+.stat-card  { text-align: center; }
+.stat-num   { font-family: 'Rajdhani', sans-serif; font-size: clamp(28px, 5vw, 42px); font-weight: 700; color: var(--cyan); line-height: 1; }
+.stat-label { font-size: 12px; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+
+.home-visual { flex: 0 0 380px; min-width: 260px; display: flex; justify-content: center; }
+
+.hero-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(0,212,232,0.2);
+  border-radius: 20px; padding: 36px;
+  backdrop-filter: blur(10px);
+  width: 100%; max-width: 360px;
+}
+.hero-card h3 {
+  color: var(--cyan); font-family: 'Rajdhani', sans-serif;
+  font-size: 18px; font-weight: 700; letter-spacing: 1px;
+  margin-bottom: 20px; text-transform: uppercase;
+}
+.service-pill {
+  display: flex; align-items: center; gap: 10px;
+  background: rgba(0,174,204,0.1); border: 1px solid rgba(0,174,204,0.2);
+  border-radius: 8px; padding: 10px 14px; margin-bottom: 10px;
+  color: #fff; font-size: 14px;
+}
+.service-pill .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--cyan); flex-shrink: 0; }
+
+.placement-badge {
+  margin-top: 20px;
+  background: linear-gradient(90deg, var(--teal), var(--cyan));
+  border-radius: 10px; padding: 14px 20px; text-align: center;
+  font-family: 'Rajdhani', sans-serif; font-size: 24px; font-weight: 700;
+  color: var(--navy); letter-spacing: 1px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .home-visual { display: none; }
+  .home-content { gap: 40px; }
+}
+
+@media (max-width: 768px) {
+  .home-content { padding: 60px 16px 60px; }
+  .home-stats   { gap: 20px; }
+  .btn-secondary { margin-left: 0; margin-top: 12px; display: inline-block; }
+  .home-title   { font-size: clamp(28px, 8vw, 48px); }
+}
+
+@media (max-width: 480px) {
+  .home-content { padding: 48px 16px 48px; }
+  .btn-primary, .btn-secondary {
+    display: block; text-align: center; margin-left: 0; margin-top: 12px;
+    padding: 14px 20px;
+  }
+  .home-stats { gap: 16px; justify-content: space-between; }
+  .stat-card  { flex: 1; min-width: 70px; }
+}
