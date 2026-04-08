@@ -1,0 +1,37 @@
+/* ── COURSES PAGES SHARED CSS ── */
+
+section { background: var(--white); }
+section.alt-bg { background: var(--light-bg); }
+
+/* tools section */
+.tools-section { margin-top: 48px; }
+.tools-section h3 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 20px; font-weight: 700; color: var(--navy);
+  margin-bottom: 20px; letter-spacing: 0.5px;
+}
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 14px;
+}
+.tool-chip {
+  background: #fff; border: 1px solid #dde;
+  border-radius: 10px; padding: 14px 12px;
+  text-align: center; font-size: 13px; font-weight: 700; color: var(--navy);
+  transition: all 0.2s;
+}
+.tool-chip:hover {
+  border-color: var(--teal); color: var(--teal);
+  box-shadow: 0 4px 12px rgba(0,174,204,0.12);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tools-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .tool-chip  { padding: 12px 8px; font-size: 12px; }
+}
+
+@media (max-width: 480px) {
+  .tools-grid { grid-template-columns: repeat(2, 1fr); }
+}
