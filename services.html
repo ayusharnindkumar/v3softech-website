@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0a1f44">
+  <title>V3 Software Technology — Services</title>
+  <link rel="stylesheet" href="css/global.css">
+  <style>
+
+    /* ══ PAGE WRAPPER ══ */
+    .services-page {
+      background: #f0f8fc;
+      padding-top: 72px;
+    }
+
+    /* ══ HERO BANNER ══ */
+    .srv-hero {
+      background: linear-gradient(135deg, #0a1f44 0%, #0d3460 55%, #0a1f44 100%);
+      padding: 70px 40px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .srv-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(0,198,255,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .srv-hero-tag {
+      display: inline-block;
+      background: rgba(0,212,232,0.12);
+      border: 1px solid rgba(0,212,232,0.3);
+      color: #00d4e8; font-size: 11px; font-weight: 700;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      padding: 6px 18px; border-radius: 100px; margin-bottom: 18px;
+    }
+    .srv-hero h1 {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 700; color: #fff; line-height: 1.15; margin-bottom: 14px;
+    }
+    .srv-hero h1 span { color: #00d4e8; }
+    .srv-hero p {
+      color: rgba(255,255,255,0.65); font-size: 1rem;
+      max-width: 560px; margin: 0 auto;
+    }
+
+    /* ══ SECTION WRAPPER ══ */
+    .srv-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 70px 40px;
+    }
+
+    /* ══ SECTION HEADING ══ */
+    .srv-heading {
+      display: flex; align-items: center; gap: 16px;
+      margin-bottom: 40px;
+    }
+    .srv-heading-icon {
+      width: 56px; height: 56px; border-radius: 16px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.7rem;
+    }
+    .design-icon-bg  { background: linear-gradient(135deg, #e0f7ff, #b3edfa); }
+    .training-icon-bg { background: linear-gradient(135deg, #e8f0ff, #c5d5ff); }
+
+    .srv-heading-text h2 {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      font-weight: 700; color: #0a1f44; line-height: 1.2;
+    }
+    .srv-heading-text h2 span { color: #00aecc; }
+    .srv-heading-text p {
+      color: #5a7080; font-size: 0.9rem; margin-top: 4px;
+    }
+    .srv-divider {
+      width: 50px; height: 4px;
+      background: linear-gradient(90deg, #00aecc, #00d4e8);
+      border-radius: 2px; margin: 12px 0 0;
+    }
+
+    /* ══ DESIGN SERVICES GRID ══ */
+    .design-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 22px;
+    }
+    .design-card {
+      background: #fff;
+      border: 1.5px solid rgba(0,174,204,0.12);
+      border-radius: 18px; padding: 28px 24px;
+      position: relative; overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+      box-shadow: 0 4px 20px rgba(10,31,68,0.06);
+    }
+    .design-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, #00aecc, #00d4e8);
+      transform: scaleX(0); transform-origin: left; transition: transform 0.35s;
+      border-radius: 18px 18px 0 0;
+    }
+    .design-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(0,174,204,0.16);
+      border-color: rgba(0,174,204,0.35);
+    }
+    .design-card:hover::before { transform: scaleX(1); }
+
+    .dc-icon {
+      width: 50px; height: 50px; border-radius: 13px;
+      background: linear-gradient(135deg, #e0f7ff, #b3edfa);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; margin-bottom: 16px;
+    }
+    .dc-title {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.05rem; font-weight: 700; color: #0a1f44;
+      margin-bottom: 8px; letter-spacing: 0.3px;
+    }
+    .dc-desc {
+      font-size: 0.83rem; color: #5a7080; line-height: 1.65;
+    }
+
+    /* "etc" card — dashed */
+    .design-card.etc-card {
+      border-style: dashed;
+      background: #f7fcff;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center; min-height: 160px;
+    }
+    .design-card.etc-card .dc-title { color: #00aecc; font-size: 1.15rem; }
+    .design-card.etc-card .dc-desc  { font-size: 0.82rem; }
+
+    /* ══ SEPARATOR ══ */
+    .srv-sep {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0,174,204,0.25), transparent);
+      margin: 0 40px;
+    }
+
+    /* ══ TRAINING SECTION ══ */
+    .training-bg {
+      background: #fff;
+      padding: 70px 40px;
+    }
+    .training-inner { max-width: 1200px; margin: 0 auto; }
+
+    /* Placement badge strip */
+    .placement-strip {
+      display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+      background: linear-gradient(135deg, #0a1f44, #0d3460);
+      border-radius: 16px; padding: 22px 30px; margin-bottom: 40px;
+    }
+    .placement-strip-icon { font-size: 2rem; }
+    .placement-strip-text h3 {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.35rem; font-weight: 700; color: #00d4e8;
+    }
+    .placement-strip-text p { color: rgba(255,255,255,0.65); font-size: 0.85rem; margin-top: 2px; }
+    .placement-strip-badges {
+      margin-left: auto; display: flex; gap: 12px; flex-wrap: wrap;
+    }
+    .ps-badge {
+      background: rgba(0,212,232,0.12);
+      border: 1px solid rgba(0,212,232,0.3);
+      border-radius: 10px; padding: 10px 18px; text-align: center;
+    }
+    .ps-badge strong {
+      display: block; font-family: 'Rajdhani', sans-serif;
+      font-size: 1.5rem; font-weight: 700; color: #00d4e8;
+    }
+    .ps-badge span { font-size: 11px; color: rgba(255,255,255,0.6); text-transform: uppercase; }
+
+    /* Training domains grid */
+    .training-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .train-card {
+      background: #f0f8fc;
+      border: 1.5px solid rgba(0,114,255,0.12);
+      border-radius: 18px; padding: 26px 22px;
+      position: relative; overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    }
+    .train-card::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, #0072ff, #00aecc);
+      transform: scaleX(0); transform-origin: left; transition: transform 0.35s;
+      border-radius: 0 0 18px 18px;
+    }
+    .train-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 40px rgba(0,114,255,0.14);
+      border-color: rgba(0,114,255,0.3);
+    }
+    .train-card:hover::after { transform: scaleX(1); }
+
+    .tc-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      background: linear-gradient(135deg, #e8f0ff, #c5d5ff);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; margin-bottom: 14px;
+    }
+    .tc-domain {
+      font-size: 10px; font-weight: 800; letter-spacing: 2px;
+      text-transform: uppercase; color: #0072ff;
+      margin-bottom: 6px;
+    }
+    .tc-title {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.05rem; font-weight: 700; color: #0a1f44;
+      margin-bottom: 8px;
+    }
+    .tc-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+    .tc-tag {
+      background: rgba(0,114,255,0.08);
+      border: 1px solid rgba(0,114,255,0.18);
+      color: #0057cc; font-size: 10px; font-weight: 700;
+      padding: 3px 9px; border-radius: 100px;
+    }
+
+    /* ══ RESPONSIVE ══ */
+    @media (max-width: 768px) {
+      .srv-hero { padding: 50px 20px 40px; }
+      .srv-section, .training-bg { padding: 50px 20px; }
+      .srv-sep { margin: 0 20px; }
+      .design-grid, .training-grid { grid-template-columns: 1fr; }
+      .placement-strip { flex-direction: column; align-items: flex-start; }
+      .placement-strip-badges { margin-left: 0; }
+    }
+    @media (max-width: 480px) {
+      .srv-heading { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+<div class="services-page">
+
+  <!-- HERO -->
+  <div class="srv-hero">
+    <div class="srv-hero-tag">⚙️ What We Do</div>
+    <h1>Our <span>Services</span></h1>
+    <p>V3 Software Technology delivers world-class CAD design services and 100% placement-backed professional training across Mechanical, Civil, Electrical and IT domains.</p>
+  </div>
+
+  <!-- ══ SECTION 1: DESIGN SERVICES ══ -->
+  <div class="srv-section">
+
+    <div class="srv-heading fade-up">
+      <div class="srv-heading-icon design-icon-bg">🛠️</div>
+      <div class="srv-heading-text">
+        <h2>V3 Company <span>Design Work</span></h2>
+        <p>Professional CAD design & engineering services delivered to industry standards</p>
+        <div class="srv-divider"></div>
+      </div>
+    </div>
+
+    <div class="design-grid">
+
+      <div class="design-card fade-up">
+        <div class="dc-icon">🔨</div>
+        <div class="dc-title">Press Tool Design</div>
+        <p class="dc-desc">Design and detailing of press tools, dies, punches and stripper plates for sheet metal stamping operations across automotive and industrial sectors.</p>
+      </div>
+
+      <div class="design-card fade-up">
+        <div class="dc-icon">🔧</div>
+        <div class="dc-title">Welding Fixture Design</div>
+        <p class="dc-desc">Complete design of welding fixtures and jigs for accurate part positioning in automotive chassis, body panels and fabrication assembly lines.</p>
+      </div>
+
+      <div class="design-card fade-up">
+        <div class="dc-icon">⚙️</div>
+        <div class="dc-title">Special Purpose Machine</div>
+        <p class="dc-desc">Conceptualisation and detailed design of special purpose machines (SPM) tailored to client-specific production and automation requirements.</p>
+      </div>
+
+      <div class="design-card fade-up">
+        <div class="dc-icon">🪛</div>
+        <div class="dc-title">Tubing Fixture Design</div>
+        <p class="dc-desc">Design of tubing and bending fixtures ensuring precision fitment of hydraulic, exhaust and structural tube assemblies in manufacturing setups.</p>
+      </div>
+
+      <div class="design-card fade-up">
+        <div class="dc-icon">🏗️</div>
+        <div class="dc-title">Fabrication / Structure Design</div>
+        <p class="dc-desc">Structural and fabrication design including frames, supports, platforms and industrial steel structures with full 2D drawings and 3D models.</p>
+      </div>
+
+      <div class="design-card fade-up">
+        <div class="dc-icon">📐</div>
+        <div class="dc-title">2D Drafting / 3D Modelling</div>
+        <p class="dc-desc">Precision 2D engineering drawings (GD&T, BOM, tolerances) and detailed 3D solid models using SolidWorks, CATIA, NX, Creo and AutoCAD.</p>
+      </div>
+
+      <div class="design-card fade-up">
+        <div class="dc-icon">🖥️</div>
+        <div class="dc-title">Design Consultancy</div>
+        <p class="dc-desc">End-to-end product design consultancy — from concept sketches, reverse engineering, prototype drawings to production-ready documentation.</p>
+      </div>
+
+      <div class="design-card etc-card fade-up">
+        <div class="dc-icon" style="background:linear-gradient(135deg,#e0f7ff,#b3edfa);margin:0 auto 12px;">✦</div>
+        <div class="dc-title">& Much More</div>
+        <p class="dc-desc">Wire harness design, plastic mould design, interior & exterior design and more. Contact us with your requirement.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="srv-sep"></div>
+
+  <!-- ══ SECTION 2: TRAINING ══ -->
+  <div class="training-bg">
+    <div class="training-inner">
+
+      <div class="srv-heading fade-up">
+        <div class="srv-heading-icon training-icon-bg">🎓</div>
+        <div class="srv-heading-text">
+          <h2>V3 Company <span>Training</span></h2>
+          <p>Industry-aligned professional training with 100% placement guarantee</p>
+          <div class="srv-divider" style="background:linear-gradient(90deg,#0072ff,#00aecc);"></div>
+        </div>
+      </div>
+
+      <!-- Placement strip -->
+      <div class="placement-strip fade-up">
+        <div class="placement-strip-icon">🏆</div>
+        <div class="placement-strip-text">
+          <h3>100% Placement Guarantee</h3>
+          <p>Every student trained at V3 gets full placement support until successfully placed in their desired role.</p>
+        </div>
+        <div class="placement-strip-badges">
+          <div class="ps-badge"><strong>100%</strong><span>Placement</span></div>
+          <div class="ps-badge"><strong>2000+</strong><span>Placed</span></div>
+          <div class="ps-badge"><strong>50+</strong><span>Partners</span></div>
+        </div>
+      </div>
+
+      <!-- Training domain cards -->
+      <div class="training-grid">
+
+        <div class="train-card fade-up">
+          <div class="tc-icon">⚙️</div>
+          <div class="tc-domain">Mechanical</div>
+          <div class="tc-title">Mechanical CAD Training</div>
+          <div class="tc-tags">
+            <span class="tc-tag">SolidWorks</span>
+            <span class="tc-tag">CATIA</span>
+            <span class="tc-tag">Creo</span>
+            <span class="tc-tag">AutoCAD</span>
+            <span class="tc-tag">NX</span>
+            <span class="tc-tag">ANSYS</span>
+            <span class="tc-tag">Press Tool</span>
+            <span class="tc-tag">Welding Fixture</span>
+          </div>
+        </div>
+
+        <div class="train-card fade-up">
+          <div class="tc-icon">🏛️</div>
+          <div class="tc-domain">Civil</div>
+          <div class="tc-title">Civil CAD Training</div>
+          <div class="tc-tags">
+            <span class="tc-tag">AutoCAD Civil</span>
+            <span class="tc-tag">Revit Architecture</span>
+            <span class="tc-tag">Staad Pro</span>
+            <span class="tc-tag">3ds Max</span>
+            <span class="tc-tag">Primavera</span>
+          </div>
+        </div>
+
+        <div class="train-card fade-up">
+          <div class="tc-icon">⚡</div>
+          <div class="tc-domain">Electrical</div>
+          <div class="tc-title">Electrical CAD Training</div>
+          <div class="tc-tags">
+            <span class="tc-tag">AutoCAD Electrical</span>
+            <span class="tc-tag">EPLAN</span>
+            <span class="tc-tag">PLC</span>
+            <span class="tc-tag">SCADA</span>
+            <span class="tc-tag">Wire Harness</span>
+          </div>
+        </div>
+
+        <div class="train-card fade-up">
+          <div class="tc-icon">💻</div>
+          <div class="tc-domain">Computer & IT</div>
+          <div class="tc-title">IT / Software Training</div>
+          <div class="tc-tags">
+            <span class="tc-tag">Full Stack Java</span>
+            <span class="tc-tag">Full Stack Python</span>
+            <span class="tc-tag">Software Testing</span>
+            <span class="tc-tag">Data Science</span>
+            <span class="tc-tag">AWS</span>
+            <span class="tc-tag">Azure</span>
+          </div>
+        </div>
+
+        <div class="train-card fade-up">
+          <div class="tc-icon">🏠</div>
+          <div class="tc-domain">Interior & Exterior</div>
+          <div class="tc-title">Interior & Exterior Design</div>
+          <div class="tc-tags">
+            <span class="tc-tag">3ds Max</span>
+            <span class="tc-tag">V-Ray</span>
+            <span class="tc-tag">SketchUp</span>
+            <span class="tc-tag">AutoCAD</span>
+            <span class="tc-tag">Lumion</span>
+          </div>
+        </div>
+
+        
+
+      </div>
+    </div>
+  </div>
+
+</div>
+<script src="css/header.js"></script>
+</body>
+</html>

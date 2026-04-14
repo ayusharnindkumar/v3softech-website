@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0a1f44">
+  <title>V3 Software Technology — Home</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+
+<!-- HOME HERO -->
+<section id="home">
+  <div class="home-bg-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+  </div>
+  <div class="home-content">
+    <div class="home-text">
+      <div class="home-badge">🎯 100% Placement Guarantee</div>
+      <h1 class="home-title">
+        CAD Design Services &amp;<br>
+        <span> Corporate Training </span><br>
+        
+      </h1>
+      <p class="home-sub">
+        V3 Software Technology is Pune's trusted CAD design & training institute — offering precision engineering design services and 100% placement-backed professional training across Mechanical, Civil, Electrical, and IT domains.
+      </p>
+      <div>
+        <a href="mechanical.html" class="btn-primary">Explore Courses</a>
+        <a href="contact.html"    class="btn-secondary">Enquire Now</a>
+      </div>
+      <div class="home-stats">
+        <div class="stat-card"><div class="stat-num">100%</div><div class="stat-label">Placement</div></div>
+        <div class="stat-card"><div class="stat-num">2000+</div><div class="stat-label">Students Placed</div></div>
+        <div class="stat-card"><div class="stat-num">6+</div><div class="stat-label">Specializations</div></div>
+        <div class="stat-card"><div class="stat-num">10+</div><div class="stat-label">Software Tools</div></div>
+        <div class="stat-card"><div class="stat-num">5000+</div><div class="stat-label">Students Trained</div></div>
+      </div>
+    </div>
+    <div class="home-visual">
+      <div class="hero-card">
+        <h3>✦ Our Services</h3>
+        <div class="service-pill"><span class="dot"></span> Design Consultant / Services</div>
+        <div class="service-pill"><span class="dot"></span> Mechanical CAD Design</div>
+        <div class="service-pill"><span class="dot"></span> Electrical CAD Design</div>
+        <div class="service-pill"><span class="dot"></span> Civil CAD Design</div>
+        <div class="service-pill"><span class="dot"></span> Corporate Training</div>
+        <div class="service-pill"><span class="dot"></span> Interior &amp; Exterior Design</div>
+        <div class="placement-badge">🏆 100% Placement</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLACEMENT MARQUEE SECTION -->
+<section id="placements">
+  <div class="placement-header">
+    <div class="placement-tag">🌟 Our Success Stories</div>
+    <h2 class="placement-title">Students <span>Successfully Placed</span></h2>
+    <p class="placement-sub">Real students. Real companies. Real success.</p>
+  </div>
+
+  <div class="marquee-wrapper">
+    <div class="marquee-track" id="marqueeTrack">
+      <!-- Cards injected by JS -->
+    </div>
+  </div>
+
+  <div class="placement-cta">
+    <a href="contact.html" class="btn-primary">Start Your Journey →</a>
+  </div>
+</section>
+
+<style>
+/* ── PLACEMENT SECTION ── */
+#placements {
+  background: linear-gradient(135deg, #020b1a 0%, #0a1f44 50%, #020b1a 100%);
+  padding: 80px 0 60px;
+  overflow: hidden;
+  position: relative;
+}
+
+#placements::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(0,198,255,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.placement-header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 0 20px;
+}
+
+.placement-tag {
+  display: inline-block;
+  background: linear-gradient(90deg, rgba(0,198,255,0.15), rgba(0,114,255,0.15));
+  border: 1px solid rgba(0,198,255,0.3);
+  color: #00c6ff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 6px 18px;
+  border-radius: 100px;
+  margin-bottom: 16px;
+}
+
+.placement-title {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 10px;
+  line-height: 1.2;
+}
+
+.placement-title span {
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.placement-sub {
+  color: rgba(255,255,255,0.5);
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Marquee */
+.marquee-wrapper {
+  position: relative;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.marquee-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  animation: marqueeScroll 40s linear infinite;
+  padding: 16px 0;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Placement Card */
+.place-card {
+  flex-shrink: 0;
+  width: 200px;
+  background: linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  border: 1px solid rgba(0,198,255,0.15);
+  border-radius: 20px;
+  padding: 20px 16px 18px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+
+.place-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00c6ff, transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.place-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  border-color: rgba(0,198,255,0.4);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(0,198,255,0.1);
+}
+
+.place-card:hover::before { opacity: 1; }
+
+.place-photo-wrap {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 14px;
+}
+
+.place-photo-wrap::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  z-index: 0;
+}
+
+.place-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  position: relative;
+  z-index: 1;
+  border: 2px solid #020b1a;
+}
+
+.place-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.place-company-badge {
+  display: inline-block;
+  background: linear-gradient(90deg, rgba(0,198,255,0.2), rgba(0,114,255,0.2));
+  border: 1px solid rgba(0,198,255,0.25);
+  color: #00c6ff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 100px;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
+.place-package {
+  font-size: 0.75rem;
+  color: #ffd700;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.placement-cta {
+  text-align: center;
+  margin-top: 48px;
+}
+</style>
+
+<script src="css/placement_images.js"></script>
+<script>
+(function() {
+  const placements = [
+    { key: "sonali",  name: "Miss. Sonali Bansode",  company: "SL Tech Solution",     package: null },
+    { key: "rashmi",  name: "Mr. Rashmi Nayar",       company: "Metafin Technology",   package: null },
+    { key: "nitesh",  name: "Mr. Nitesh Rajput",      company: "JFE",                  package: null },
+    { key: "manoj",   name: "Mr. Manoj Patil",        company: "Unikraft Technology",  package: null },
+    { key: "nandu",   name: "Mr. Nandu Sagare",       company: "L&T",                  package: null },
+    { key: "ishvar1", name: "Mr. Ishvar Ghodake",     company: "Erdos Automation",     package: null },
+    { key: "Monali", name: "Miss. Monali Marathe",     company: "Akvira Industries",     package: null },
+    { key: "rajat",   name: "Mr. Hemant Chavan",        company: "Unique Circle Automation",                  package: null },
+    { key: "snehal",  name: "Mr. Rajat Pawar",    company: "JFE",                  package: "6.2 LPA 🎉" },
+    { key: "Adesh Yelmame",  name: "Mr. Adesh Yelmame",       company: "ASP Enviro",           package: null },
+    { key: "Avinash Kinkrale",  name: "Mr. Avinash Kinkrale",  company: "Rapidsky Industries", package: null },
+    { key: "Shital Gawali",  name: "Miss. Shital Gawali",     company: "DK Industry",         package: null },
+    { key: "Omkar Mane",  name: "Mr. Omkar Mane",             company: "Tulesh Industry",     package: null },
+    { key: "Shubham Rotte",  name: "Mr. Shubham Rotte",       company: "Design Tech",        package: null },
+    { key: "Omkar Hatte",  name: "Mr. Omkar Hatte",           company: "Valmate Company",    package: null },
+    { key: "Ganesh Mali",  name: "Mr. Ganesh Mali",           company: "Bullows Paint Equipment Pvt Ltd", package: null },
+    { key: "Keshav Sawant",  name: "Mr. Keshav Sawant",       company: "Hinduja Tech",       package: null },
+    { key: "Nikhil Avhad",  name: "Mr. Nikhil Avhad",         company: "Gouri Automation",   package: null },
+    { key: "Sachin Chikte",  name: "Mr. Sachin Chikte",       company: "Wilo Industry",      package: null },
+    { key: "Harshada Kamble",  name: "Miss. Harshada Kamble", company: "Wipro Pvt Ltd",     package: null },
+    { key: "Ashish Birajdar",  name: "Mr. Ashish Birajdar",   company: "Varad Engg",        package: null },
+  ];
+
+  function buildCards(list) {
+    return list.map(p => `
+      <div class="place-card">
+        <div class="place-photo-wrap">
+          <img class="place-photo" src="${placementImages[p.key]}" alt="${p.name}" loading="lazy">
+        </div>
+        <div class="place-name">${p.name}</div>
+        <div class="place-company-badge">${p.company}</div>
+        ${p.package ? `<div class="place-package">💰 ${p.package}</div>` : ''}
+      </div>
+    `).join('');
+  }
+
+  const track = document.getElementById('marqueeTrack');
+  // Duplicate for seamless loop
+  const html = buildCards(placements);
+  track.innerHTML = html + html;
+})();
+</script>
+
+<!-- CLIENTS SECTION -->
+<section id="clients">
+  <div class="clients-bg-glow"></div>
+  <div class="clients-container">
+    <div class="clients-header">
+      <div class="clients-tag">🤝 Trusted Partners</div>
+      <h2 class="clients-title">Our <span>Valued Clients</span></h2>
+      <p class="clients-sub">Powering India's top industries — from automotive giants to cutting-edge tech firms.</p>
+    </div>
+
+    <div class="clients-grid">
+      <div class="client-pill"><span class="pill-dot"></span>Design Tech</div>
+      <div class="client-pill"><span class="pill-dot"></span>Volvo Eicher</div>
+      <div class="client-pill"><span class="pill-dot"></span>Magna</div>
+      <div class="client-pill"><span class="pill-dot"></span>HCL Technology</div>
+      <div class="client-pill"><span class="pill-dot"></span>Lear</div>
+      <div class="client-pill"><span class="pill-dot"></span>Plastic Omnium</div>
+      <div class="client-pill"><span class="pill-dot"></span>Tech Mahindra</div>
+      <div class="client-pill"><span class="pill-dot"></span>Pari Automation</div>
+      <div class="client-pill"><span class="pill-dot"></span>Forvia</div>
+      <div class="client-pill"><span class="pill-dot"></span>Motherson</div>
+      <div class="client-pill"><span class="pill-dot"></span>Johnson</div>
+      <div class="client-pill"><span class="pill-dot"></span>Bharat Forge</div>
+      <div class="client-pill"><span class="pill-dot"></span>JFE</div>
+      <div class="client-pill"><span class="pill-dot"></span>Segula</div>
+      <div class="client-pill"><span class="pill-dot"></span>Advik</div>
+      <div class="client-pill"><span class="pill-dot"></span>Param Tech</div>
+      <div class="client-pill"><span class="pill-dot"></span>Faith Automation</div>
+      <div class="client-pill"><span class="pill-dot"></span>Aditya Robotics</div>
+      <div class="client-pill"><span class="pill-dot"></span>Surya VR Automation</div>
+      <div class="client-pill"><span class="pill-dot"></span>Amison Engg</div>
+      <div class="client-pill"><span class="pill-dot"></span>Hitech Robotics</div>
+      <div class="client-pill"><span class="pill-dot"></span>Medas Engg</div>
+      <div class="client-pill"><span class="pill-dot"></span>Rythmsoft</div>
+      <div class="client-pill"><span class="pill-dot"></span>Erdos Automation</div>
+      <div class="client-pill"><span class="pill-dot"></span>Akvira</div>
+      <div class="client-pill"><span class="pill-dot"></span>Patil Automation</div>
+      <div class="client-pill"><span class="pill-dot"></span>DK Industry</div>
+      <div class="client-pill"><span class="pill-dot"></span>AMPL</div>
+      <div class="client-pill"><span class="pill-dot"></span>Venergia</div>
+      <div class="client-pill"><span class="pill-dot"></span>Pinnacle</div>
+      <div class="client-pill"><span class="pill-dot"></span>Bharat Electronics</div>
+      <div class="client-pill"><span class="pill-dot"></span>GGS Engg</div>
+      <div class="client-pill"><span class="pill-dot"></span>GPZ Engg</div>
+      <div class="client-pill"><span class="pill-dot"></span>Tata Motors</div>
+      <div class="client-pill"><span class="pill-dot"></span>Thermax</div>
+      <div class="client-pill"><span class="pill-dot"></span>Cummins</div>
+      <div class="client-pill"><span class="pill-dot"></span>RN Pumps</div>
+      <div class="client-pill"><span class="pill-dot"></span>Dynapac</div>
+      <div class="client-pill"><span class="pill-dot"></span>Force Motors</div>
+      <div class="client-pill"><span class="pill-dot"></span>Godrej</div>
+      <div class="client-pill"><span class="pill-dot"></span>LG</div>
+      <div class="client-pill"><span class="pill-dot"></span>Capgemini</div>
+      <div class="client-pill"><span class="pill-dot"></span>Aurus</div>
+      <div class="client-pill"><span class="pill-dot"></span>Active Chromwell</div>
+      <div class="client-pill"><span class="pill-dot"></span>Accumac Engg</div>
+      <div class="client-pill"><span class="pill-dot"></span>GMM MFG</div>
+      <div class="client-pill"><span class="pill-dot"></span>Prefab Tank</div>
+      <div class="client-pill"><span class="pill-dot"></span>RK Engg</div>
+      <div class="client-pill"><span class="pill-dot"></span>Ecomak</div>
+      <div class="client-pill"><span class="pill-dot"></span>Balaji Industry</div>
+      <div class="client-pill"><span class="pill-dot"></span>KPT Engg</div>
+      <div class="client-pill"><span class="pill-dot"></span>Ease</div>
+      <div class="client-pill"><span class="pill-dot"></span>Epitome</div>
+      <div class="client-pill"><span class="pill-dot"></span>SL Tech</div>
+      <div class="client-pill"><span class="pill-dot"></span>Jay Hind</div>
+      <div class="client-pill"><span class="pill-dot"></span>Unique Circle Auto.</div>
+      <div class="client-pill"><span class="pill-dot"></span>ASP Enviro</div>
+      <div class="client-pill"><span class="pill-dot"></span>Unique Circle Engg.</div>
+      <div class="client-pill"><span class="pill-dot"></span>Kinetic Engg</div>
+      <div class="client-pill"><span class="pill-dot"></span>Universal Solution</div>
+      <div class="client-pill"><span class="pill-dot"></span>Vowel</div>
+      <div class="client-pill"><span class="pill-dot"></span>Unikraft Tech.</div>
+      <div class="client-pill"><span class="pill-dot"></span>Passion Tech</div>
+      <div class="client-pill"><span class="pill-dot"></span>COSO</div>
+      <div class="client-pill"><span class="pill-dot"></span>Finess Auto.</div>
+      <div class="client-pill"><span class="pill-dot"></span>Hinduja Tech</div>
+      <div class="client-pill"><span class="pill-dot"></span>Tata Technology</div>
+      <div class="client-pill"><span class="pill-dot"></span>Ruhlamat</div>
+      <div class="client-pill"><span class="pill-dot"></span>Johndeer</div>
+      <div class="client-pill"><span class="pill-dot"></span>Nilsoft</div>
+      <div class="client-pill"><span class="pill-dot"></span>Delfingen</div>
+      <div class="client-pill"><span class="pill-dot"></span>S.H.Pitkar</div>
+      <div class="client-pill"><span class="pill-dot"></span>Iasys</div>
+      <div class="client-pill"><span class="pill-dot"></span>Sanny</div>
+      <div class="client-pill"><span class="pill-dot"></span>Emerson</div>
+      <div class="client-pill"><span class="pill-dot"></span>Tata Autocomp</div>
+      <div class="client-pill"><span class="pill-dot"></span>Vankey</div>
+      <div class="client-pill"><span class="pill-dot"></span>Yazaki</div>
+      <div class="client-pill"><span class="pill-dot"></span>Endurance</div>
+      <div class="client-pill"><span class="pill-dot"></span>Tata Elexi</div>
+      <div class="client-pill"><span class="pill-dot"></span>Adient</div>
+      <div class="client-pill"><span class="pill-dot"></span>Tech Expert</div>
+      <div class="client-pill"><span class="pill-dot"></span>Dhoot Automation</div>
+      <div class="client-pill"><span class="pill-dot"></span>Morya Packaging</div>
+      <div class="client-pill"><span class="pill-dot"></span>Trend Technology</div>
+      <div class="client-pill"><span class="pill-dot"></span>Aromotive</div>
+      <div class="client-pill"><span class="pill-dot"></span>Minda Ltd.</div>
+      <div class="client-pill"><span class="pill-dot"></span>Mungi SR Thermal</div>
+      <div class="client-pill"><span class="pill-dot"></span>Forbes Marshal</div>
+      <div class="client-pill"><span class="pill-dot"></span>Syntel</div>
+      <div class="client-pill"><span class="pill-dot"></span>IRTI Robotics</div>
+      <div class="client-pill"><span class="pill-dot"></span>SAE Engg</div>
+      <div class="client-pill"><span class="pill-dot"></span>Tech Integra</div>
+      <div class="client-pill"><span class="pill-dot"></span>Wibro Pvt Ltd.</div>
+      <div class="client-pill"><span class="pill-dot"></span>G-Square</div>
+      <div class="client-pill"><span class="pill-dot"></span>Breson Engg</div>
+      <div class="client-pill"><span class="pill-dot"></span>Metafin Tech.</div>
+      <div class="client-pill"><span class="pill-dot"></span>Mittal Group</div>
+      <div class="client-pill"><span class="pill-dot"></span>Bullows</div>
+      <div class="client-pill"><span class="pill-dot"></span>COEP Enviro</div>
+      <div class="client-pill"><span class="pill-dot"></span>Electra Mech</div>
+      <div class="client-pill"><span class="pill-dot"></span>Onword Tech</div>
+      <div class="client-pill"><span class="pill-dot"></span>SU Tantra</div>
+      <div class="client-pill"><span class="pill-dot"></span>Seiton Tech</div>
+      <div class="client-pill"><span class="pill-dot"></span>ISGEC</div>
+      <div class="client-pill"><span class="pill-dot"></span>Blaze Industry</div>
+      <div class="client-pill"><span class="pill-dot"></span>Behr Hella</div>
+      <div class="client-pill"><span class="pill-dot"></span>Vasant Group</div>
+      <div class="client-pill"><span class="pill-dot"></span>Ease Automation</div>
+      <div class="client-pill"><span class="pill-dot"></span>Accurate</div>
+      <div class="client-pill"><span class="pill-dot"></span>JBM</div>
+      <div class="client-pill"><span class="pill-dot"></span>Tulesh Industry</div>
+      <div class="client-pill"><span class="pill-dot"></span>Jyoti Tooling</div>
+      <div class="client-pill"><span class="pill-dot"></span>Nord</div>
+      <div class="client-pill"><span class="pill-dot"></span>Dana</div>
+      <div class="client-pill"><span class="pill-dot"></span>Concord</div>
+      <div class="client-pill"><span class="pill-dot"></span>Nikhitsh Engg</div>
+      <div class="client-pill"><span class="pill-dot"></span>ACE Brain</div>
+      <div class="client-pill"><span class="pill-dot"></span>AEM Tech</div>
+      <div class="client-pill"><span class="pill-dot"></span>GAPS Energy</div>
+      <div class="client-pill"><span class="pill-dot"></span>Ultra Precision</div>
+      <div class="client-pill"><span class="pill-dot"></span>HDFC</div>
+      <div class="client-pill"><span class="pill-dot"></span>Bobst</div>
+      <div class="client-pill"><span class="pill-dot"></span>ICICI</div>
+      <div class="client-pill"><span class="pill-dot"></span>KASCO Industry</div>
+      <div class="client-pill"><span class="pill-dot"></span>Axis</div>
+      <div class="client-pill"><span class="pill-dot"></span>KNEST</div>
+      <div class="client-pill"><span class="pill-dot"></span>Bajaj Insurance</div>
+      <div class="client-pill"><span class="pill-dot"></span>Intact Automation</div>
+    </div>
+
+    <div class="clients-stats-row">
+      <div class="cstat"><span class="cstat-num">120+</span><span class="cstat-lbl">Client Companies</span></div>
+      <div class="cstat-divider"></div>
+      <div class="cstat"><span class="cstat-num">15+</span><span class="cstat-lbl">Industry Sectors</span></div>
+      <div class="cstat-divider"></div>
+      <div class="cstat"><span class="cstat-num">10+</span><span class="cstat-lbl">Years of Trust</span></div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* ── CLIENTS SECTION ── */
+#clients {
+  position: relative;
+  background: linear-gradient(160deg, #020b1a 0%, #051228 40%, #0a1f44 80%, #020b1a 100%);
+  padding: 90px 0 80px;
+  overflow: hidden;
+}
+
+.clients-bg-glow {
+  position: absolute;
+  width: 700px; height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(224,16,110,0.07) 0%, rgba(0,114,255,0.05) 40%, transparent 70%);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  animation: clientGlowPulse 6s ease-in-out infinite alternate;
+}
+
+@keyframes clientGlowPulse {
+  0%   { transform: translate(-50%, -50%) scale(1);   opacity: 0.7; }
+  100% { transform: translate(-50%, -50%) scale(1.2); opacity: 1;   }
+}
+
+.clients-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.clients-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.clients-tag {
+  display: inline-block;
+  background: linear-gradient(90deg, rgba(224,16,110,0.15), rgba(240,124,16,0.15));
+  border: 1px solid rgba(224,16,110,0.35);
+  color: #e0106e;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 6px 20px;
+  border-radius: 100px;
+  margin-bottom: 18px;
+}
+
+.clients-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 12px;
+  line-height: 1.15;
+  letter-spacing: 0.5px;
+}
+
+.clients-title span {
+  background: linear-gradient(90deg, #e0106e, #f07c10);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.clients-sub {
+  color: rgba(255,255,255,0.48);
+  font-size: 1rem;
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Pill Grid */
+.clients-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 56px;
+}
+
+.client-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.03) 100%);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.85);
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 9px 18px;
+  border-radius: 100px;
+  backdrop-filter: blur(8px);
+  cursor: default;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.client-pill::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(224,16,110,0.12), rgba(240,124,16,0.12));
+  opacity: 0;
+  transition: opacity 0.28s;
+  border-radius: inherit;
+}
+
+.client-pill:hover {
+  border-color: rgba(224,16,110,0.5);
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(224,16,110,0.2), 0 0 0 1px rgba(224,16,110,0.2);
+}
+
+.client-pill:hover::before { opacity: 1; }
+
+.pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e0106e, #f07c10);
+  flex-shrink: 0;
+  box-shadow: 0 0 6px rgba(224,16,110,0.6);
+  position: relative;
+  z-index: 1;
+}
+
+/* Stats Row */
+.clients-stats-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 28px 40px;
+  backdrop-filter: blur(12px);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.cstat {
+  flex: 1;
+  text-align: center;
+}
+
+.cstat-num {
+  display: block;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #e0106e, #f07c10);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.cstat-lbl {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cstat-divider {
+  width: 1px;
+  height: 48px;
+  background: rgba(255,255,255,0.12);
+  margin: 0 24px;
+}
+
+@media (max-width: 600px) {
+  .clients-stats-row { flex-direction: column; gap: 20px; padding: 24px; }
+  .cstat-divider { width: 60px; height: 1px; margin: 0; }
+}
+</style>
+
+<script src="css/header.js"></script>
+</body>
+</html>

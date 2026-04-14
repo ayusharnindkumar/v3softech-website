@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Nunito:wght@300;400;600;700&display=swap');
+
+:root {
+  --navy:    #0a1f44;
+  --teal:    #00aecc;
+  --cyan:    #00d4e8;
+  --pink:    #e0106e;
+  --orange:  #f07c10;
+  --white:   #ffffff;
+  --light-bg:#f0f8fc;
+  --text:    #1a2a3a;
+  --muted:   #5a7080;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  color: var(--text);
+  background: var(--white);
+  overflow-x: hidden;
+}
+
+/* ── HEADER ── */
+header {
+  position: fixed; top: 0; width: 100%; z-index: 1000;
+  background: var(--navy);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 20px; height: 72px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.35);
+}
+
+.logo-area {
+  display: flex; align-items: center; gap: 14px;
+  text-decoration: none; flex-shrink: 0;
+}
+.logo-img-real {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+}
+.logo-text .brand {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 20px; font-weight: 700; letter-spacing: 1px;
+  background: linear-gradient(90deg, #e0106e 0%, #b44fdb 35%, #5b6ef5 65%, #00c6ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 8px rgba(224,16,110,0.3));
+}
+.logo-text .brand span {
+  background: inherit;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.logo-text .tagline {
+  font-size: 10px; color: var(--teal);
+  letter-spacing: 0.5px; text-transform: uppercase;
+}
+
+/* ── DESKTOP NAV ── */
+nav { display: flex; align-items: center; gap: 4px; }
+nav a {
+  color: rgba(255,255,255,0.82);
+  text-decoration: none;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 15px; font-weight: 600;
+  padding: 8px 14px; border-radius: 6px;
+  letter-spacing: 0.5px; transition: all 0.2s;
+  position: relative; white-space: nowrap;
+}
+nav a::after {
+  content: '';
+  position: absolute; bottom: 4px; left: 14px; right: 14px; height: 2px;
+  background: var(--cyan); transform: scaleX(0); transition: transform 0.25s;
+}
+nav a:hover        { color: var(--cyan); background: rgba(0,212,232,0.08); }
+nav a:hover::after { transform: scaleX(1); }
+nav a.active       { color: var(--cyan); background: rgba(0,212,232,0.1); }
+
+/* ── HAMBURGER BUTTON ── */
+.hamburger {
+  display: none;
+  flex-direction: column; justify-content: center; align-items: center;
+  gap: 5px; width: 44px; height: 44px;
+  background: rgba(255,255,255,0.08); border-radius: 8px;
+  cursor: pointer; border: none; flex-shrink: 0;
+}
+.hamburger span {
+  display: block; width: 24px; height: 2px;
+  background: #fff; border-radius: 2px; transition: all 0.3s ease;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── MOBILE NAV DRAWER ── */
+.mobile-nav {
+  display: none;
+  position: fixed; top: 72px; left: 0; right: 0;
+  background: var(--navy); z-index: 999;
+  border-top: 1px solid rgba(0,212,232,0.2);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  opacity: 0; transform: translateY(-8px);
+  transition: opacity 0.25s, transform 0.25s;
+  pointer-events: none;
+}
+.mobile-nav.open { opacity: 1; transform: translateY(0); pointer-events: all; }
+.mobile-nav a {
+  display: block; padding: 15px 24px;
+  color: rgba(255,255,255,0.85); text-decoration: none;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 17px; font-weight: 600; letter-spacing: 0.5px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: all 0.2s;
+}
+.mobile-nav a:hover, .mobile-nav a.active {
+  color: var(--cyan); background: rgba(0,212,232,0.08); padding-left: 32px;
+}
+
+/* ── WHATSAPP FLOAT ── */
+.whatsapp-float {
+  position: fixed; bottom: 28px; right: 28px; z-index: 999;
+  width: 60px; height: 60px; background: #25D366;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+  animation: wapulse 2.5s infinite; transition: transform 0.2s;
+}
+.whatsapp-float:hover { transform: scale(1.12); }
+.whatsapp-float svg  { width: 32px; height: 32px; fill: white; }
+@keyframes wapulse {
+  0%,100% { box-shadow: 0 4px 20px rgba(37,211,102,0.5); }
+  50%      { box-shadow: 0 4px 36px rgba(37,211,102,0.85); }
+}
+
+/* ── SECTION COMMON ── */
+section { min-height: 100vh; padding-top: 72px; }
+.section-inner { max-width: 1200px; margin: 0 auto; padding: 80px 40px; }
+
+.section-header  { text-align: center; margin-bottom: 60px; }
+.section-tag {
+  display: inline-block;
+  background: rgba(0,174,204,0.1); color: var(--teal);
+  font-size: 12px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; padding: 6px 16px; border-radius: 20px;
+  margin-bottom: 12px; border: 1px solid rgba(0,174,204,0.25);
+}
+.section-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: clamp(24px, 5vw, 46px); font-weight: 700;
+  color: var(--navy); line-height: 1.15;
+}
+.section-title span { color: var(--teal); }
+.section-divider {
+  width: 60px; height: 4px;
+  background: linear-gradient(90deg, var(--teal), var(--cyan));
+  border-radius: 2px; margin: 16px auto 0;
+}
+
+/* ── COURSE CARDS ── */
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+}
+.course-card {
+  background: #fff; border-radius: 14px;
+  border: 1px solid #e2eef5; padding: 28px;
+  transition: all 0.28s; position: relative; overflow: hidden;
+}
+.course-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(90deg, var(--teal), var(--cyan));
+  transform: scaleX(0); transform-origin: left; transition: transform 0.3s;
+}
+.course-card:hover { transform: translateY(-5px); box-shadow: 0 12px 36px rgba(0,174,204,0.15); border-color: var(--teal); }
+.course-card:hover::before { transform: scaleX(1); }
+.course-icon {
+  width: 52px; height: 52px; border-radius: 12px;
+  background: rgba(0,174,204,0.1);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 26px; margin-bottom: 18px;
+}
+.course-card h3 { font-family: 'Rajdhani', sans-serif; font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+.course-card p  { font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 16px; }
+.course-tags    { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag {
+  background: rgba(0,174,204,0.08); color: var(--teal);
+  font-size: 11px; font-weight: 700; padding: 4px 10px;
+  border-radius: 20px; letter-spacing: 0.5px; border: 1px solid rgba(0,174,204,0.2);
+}
+
+/* ── PLACEMENT BANNER ── */
+.placement-banner {
+  background: linear-gradient(135deg, var(--navy), #0d3460);
+  border-radius: 16px; padding: 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 24px; flex-wrap: wrap; margin-top: 48px;
+}
+.pb-left h2 { font-family: 'Rajdhani', sans-serif; font-size: clamp(22px,4vw,32px); font-weight: 700; color: var(--cyan); }
+.pb-left p  { color: rgba(255,255,255,0.72); font-size: 15px; margin-top: 6px; }
+.pb-badges  { display: flex; gap: 16px; flex-wrap: wrap; }
+.pb-badge {
+  background: rgba(0,212,232,0.12); border: 1px solid rgba(0,212,232,0.3);
+  border-radius: 10px; padding: 12px 20px; text-align: center;
+}
+.pb-badge strong { display: block; font-family: 'Rajdhani', sans-serif; font-size: 28px; font-weight: 700; color: var(--cyan); }
+.pb-badge span   { font-size: 12px; color: rgba(255,255,255,0.65); text-transform: uppercase; }
+
+/* ── PDF PLACEHOLDER ── */
+.pdf-section-box {
+  background: #f7fcff; border: 2px dashed rgba(0,174,204,0.35);
+  border-radius: 14px; padding: 40px; text-align: center; margin-top: 36px;
+}
+.pdf-section-box h3 { font-family: 'Rajdhani', sans-serif; font-size: 22px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+.pdf-section-box p  { color: var(--muted); font-size: 14px; margin-bottom: 20px; }
+.pdf-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; margin-top: 20px; }
+.pdf-card {
+  background: #fff; border: 1px solid #ddeef5; border-radius: 10px;
+  padding: 20px 16px; text-align: center; font-size: 13px; color: var(--muted);
+  cursor: pointer; transition: all 0.2s;
+}
+.pdf-card:hover    { border-color: var(--teal); color: var(--navy); box-shadow: 0 4px 14px rgba(0,174,204,0.12); }
+.pdf-card .pdf-icon{ font-size: 32px; margin-bottom: 8px; }
+.pdf-card strong   { display: block; color: var(--navy); font-size: 14px; margin-bottom: 4px; }
+.pdf-placeholder   { background: #e8f5fb; border-radius: 10px; padding: 20px; color: var(--teal); font-weight: 600; font-size: 13px; }
+
+/* ── FOOTER ── */
+footer {
+  background: #060f20; padding: 24px 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 12px;
+}
+footer p    { color: rgba(255,255,255,0.4); font-size: 13px; }
+footer a    { color: var(--teal); text-decoration: none; font-size: 13px; }
+footer a:hover { color: var(--cyan); }
+
+/* ── SCROLL ANIMATION ── */
+.fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+/* ══════════════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+══════════════════════════════════════════════ */
+
+/* Tablet (≤900px) */
+@media (max-width: 900px) {
+  header         { padding: 0 20px; }
+  nav a          { padding: 6px 10px; font-size: 13px; }
+  .section-inner { padding: 60px 24px; }
+}
+
+/* Mobile (≤768px) */
+@media (max-width: 768px) {
+  nav            { display: none; }
+  .hamburger     { display: flex; }
+  .mobile-nav    { display: block; top: 64px; }
+
+  header         { padding: 0 16px; height: 64px; }
+  section        { padding-top: 64px; }
+
+  .logo-img-real      { width: 44px; height: 44px; }
+  .logo-text .brand   { font-size: 15px; letter-spacing: 0; }
+  .logo-text .tagline { font-size: 7px; display: block; }
+
+  .section-inner  { padding: 40px 16px; }
+  .section-header { margin-bottom: 32px; }
+
+  .courses-grid   { grid-template-columns: 1fr; }
+  .pdf-grid       { grid-template-columns: repeat(2, 1fr); }
+
+  .placement-banner { padding: 24px 16px; flex-direction: column; align-items: flex-start; }
+  .pb-badges        { width: 100%; justify-content: flex-start; }
+
+  footer            { padding: 20px 16px; flex-direction: column; align-items: flex-start; }
+
+  .whatsapp-float   { bottom: 16px; right: 16px; width: 52px; height: 52px; }
+  .whatsapp-float svg { width: 26px; height: 26px; }
+}
+
+/* Small Mobile (≤480px) */
+@media (max-width: 480px) {
+  .logo-img-real    { width: 36px; height: 36px; }
+  .logo-text .brand { font-size: 13px; }
+  .pdf-grid         { grid-template-columns: 1fr; }
+  .pb-badges        { flex-direction: column; }
+  .pb-badge         { width: 100%; }
+  .course-card      { padding: 20px; }
+  .pdf-section-box  { padding: 24px 16px; }
+}
